@@ -1,0 +1,261 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1c1c1c, #292929);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    color: #FFD60A; /* Yellow accent color */
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFD60A;
+    transition: all 0.3s ease;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 1000px; /* High value for desktop */
+}
+
+.nav-links.hidden {
+    max-height: 0; /* Hidden for smaller screens */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: #FFD60A;
+    color: #000; /* Black text on hover */
+    transform: scale(1.1);
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #212121; /* Card-like background */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.container h1 {
+    font-size: 2em;
+    color: #FFD60A;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #FFD60A;
+    padding-bottom: 10px;
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #FFD60A; /* Yellow label text */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #2b2b2b;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #FFD60A;
+    box-shadow: 0 0 8px rgba(255, 214, 10, 0.5);
+}
+
+button {
+    display: inline-block;
+    background: #FFD60A; /* Yellow button */
+    color: #000; /* Black text */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ffcc00; /* Slightly darker yellow */
+    transform: translateY(-3px);
+}
+
+/* Results Section */
+.hidden {
+    display: none;
+}
+
+#results h2 {
+    font-size: 1.8em;
+    color: #FFD60A;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+pre {
+    background: #2b2b2b;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    font-size: 1em;
+}
+
+/* Matrix Input Grid Styling */
+#matrix-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.matrix-cell {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #2b2b2b;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.matrix-cell:focus {
+    outline: none;
+    border-color: #FFD60A;
+    box-shadow: 0 0 6px rgba(255, 214, 10, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+        align-items: center; /* Keeps the content vertically centered */
+        justify-content: center; /* Centers horizontally (if needed) */
+        position: relative; /* Ensures the hamburger stays in place */
+    }
+    
+    .hamburger:active {
+        transform: scale(1); /* Prevents scaling effect when clicked */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-right: 20%;
+        margin-top: 2%;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    /* .nav-links.hidden {
+      max-height: 500px; /* Show when toggled */
+    }   */
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
+    }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+}

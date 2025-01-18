@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1c1c1c, #292929);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar .logo {
+    font-size: 1.8em;
+    color: #FFD60A; /* Yellow accent color */
+    font-weight: bold;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    gap: 5px;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 1000px; /* High value for desktop */
+}
+
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: #FFD60A;
+    color: #000; /* Black text on hover */
+    transform: scale(1.1);
+}
+
+
+/* About Section */
+.about-section {
+    padding: 60px 30px;
+    max-width: 900px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #1e1e1e, #292929);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    color: #FFD60A;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #FFD60A;
+    padding-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* Button (Optional for Further Navigation) */
+button {
+    display: inline-block;
+    background: #FFD60A; /* Yellow button */
+    color: #000; /* Black text */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ffcc00; /* Slightly darker yellow */
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+        align-items: center; /* Keeps the content vertically centered */
+        justify-content: center; /* Centers horizontally (if needed) */
+        position: relative; /* Ensures the hamburger stays in place */
+    }
+    
+    .hamburger:active {
+        transform: scale(1); /* Prevents scaling effect when clicked */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-right: 20%;
+        margin-top: 2%;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-section h1 {
+        font-size: 2rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+/* @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .about-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p {
+        font-size: 0.9rem;
+    }
+} */

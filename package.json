@@ -1,0 +1,21 @@
+{
+  "name": "matrices-inverse-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^5.0.1",
+    "mathjs": "^14.0.1",
+    "nodemon": "^3.1.9"
+  }
+}
